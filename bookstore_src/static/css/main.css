@@ -1,53 +1,93 @@
-/* Styles used on multiple pages */
-
+/* ===== GLOBAL ===== */
 body {
-    max-width: 1160px;
-    font: 1em normal Arial, sans-serif;
-    color: #111111;
+    max-width: 1100px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f7f9fc, #eef3f9);
+    color: #333;
 }
-/* rules for the header */
+
+a {
+    text-decoration: none;
+}
+
+/* ===== HEADER ===== */
 header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-left: 10px;
+    padding: 20px;
+    background: linear-gradient(to right, #4a90e2, #7b68ee);
+    border-bottom: 3px solid #ffb347;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
 
-/* rules for the center header */
-#searchBoxForm {
-    margin-top: 30px;
+#leftHeader a {
+    color: white;
+}
+
+#leftHeader img {
+    max-height: 80px;
+}
+
+#midHeader {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
+
+/* ===== SEARCH ===== */
+#searchBoxForm {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+}
+
 #searchBox {
-    height: 20px;
+    padding: 8px;
+    border: 1px solid #d0d7e2;
+    border-radius: 6px;
+    width: 180px;
+    background-color: white;
 }
 
+#searchIcon,
+input[type="image"] {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    background-color: #ffb347;
+    padding: 6px;
+}
 
+/* ===== DROPDOWN ===== */
 .dropdown {
     position: relative;
     display: inline-block;
-    margin-top: 30px;
 }
 
 .dropdownSelect {
-    width: 189px;
-    padding: 5px;
-    background-color: #dd1d5e;
+    width: 220px;
+    padding: 10px;
+    background-color: #ffb347;
     color: white;
     text-align: center;
-    display: block;
-    border-radius: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .dropdownContent {
     display: none;
     position: absolute;
-    min-width: 200px;
-    padding-top: 5px;
-    z-index: 1;
-    border-radius: 5px;
-    background-color: #dd1d5e;
-    text-align: center;
+    width: 220px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    z-index: 10;
 }
 
 .dropdown:hover .dropdownContent {
@@ -55,255 +95,267 @@ header {
 }
 
 .dropdownContent a {
-    color: white;
-    text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: #333;
 }
 
 .dropdownContent a:hover {
-    color: #00aacc;
-    text-decoration: none;
+    background-color: #fef3e2;
 }
 
-/* rules for the right header */
-
+/* ===== RIGHT HEADER ===== */
 #rightHeader {
     display: flex;
-    margin-top: 40px;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-#cartCount{
-    width: 150px;
-    margin: 8px 0 0 10px;
+#cartIcon,
+#cartCount {
+    display: none;
 }
 
 .loginButton {
-    background-color: #dd1d5e;
-    width: 50px;
-    height: 30px;
-    margin: 4px auto 0 auto;
-    text-align: center;
-    line-height: 30px;
-    border-radius: 8px;
+    background-color: #27ae60;
+    border-radius: 6px;
+    padding: 8px 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
 
-.loginButton a{
+.loginButton a {
     color: white;
-    text-decoration: none;
-}
-.loginButton a:hover {
-    color: #00aacc;
-    text-decoration: none;
-}
-
-/* rules for the footer */
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid black;
-    margin-left: 10px;
-    padding: 15px 0;
-    font-size: 0.8em;
-}
-
-#footerLeft {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0 0 10px;
-    width: 300px;
-}
-
-#footerLeft a{
-    padding-top: 12px;
-}
-
-#footerRight {
-    display: flex;
-    justify-content: space-between;
-    margin-right: 50px;
-    width: 80px;
-}
-
-#notFoundMessage {
-    color: red;
-}
-
-.commandButton {
-    height: 30px;
-    width: 150px;
-    border-radius: 8px;
-    margin: 20px;
-    text-align: center;
-    line-height: 30px;
-    background-color: #dd1d5e;
-    font-size: smaller;
-    color: white;
-    text-decoration: none;
-    display: block;
-}
-
-
-.submitButton {
-    height: 18px;
-    border-radius: 8px;
-    border: none;
-    margin: 6px 0 0 4px;
-    text-align: center;
-    background-color: #dd1d5e;
-    color: white;
-    font-size: 0.875em;
-    text-decoration: none;
-}
-
-main {
-    display: flex;
-    margin: 5px 0 0 10px;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-}
-
-h1{
-    font-size: 1.6em;
-    font-weight: 700;
-}
-
-/* Styles only used on the index page */
-/* Styles used on the left hand Welcome text section */
-#mainLeft {
-    width: 550px;
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-}
-
-#mainLeft p{
-    font-size: 120%;
-}
-
-.welcomeText {
-    max-width: 400px;
-}
-
-/* Styles used on the right hand Category section */
-#mainRight {
-    max-width: 600px;
-    border-left: 1px solid black;
-    padding: 20px 0;
-    background-color: #fff9fc;
-    text-align: center;
-}
-
-#categorySelections {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.category {
-    width: 299px;
-    margin-top: 20px;
-    text-align: center;
-    line-height: 40px;
-    color: #dd1d5e;
     font-weight: bold;
 }
 
-.category a{
-    text-decoration: none;
-}
-
-
-/* Styles used on the category page */
-/* Styles used for the left hand navigation section */
-
-#catLeft {
-    width: 500px;
-    border-right: 1px solid black;
+/* ===== MAIN LAYOUT ===== */
+main {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* ===== WELCOME TEXT ===== */
+#mainLeft {
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 850px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.welcomeText {
+    line-height: 1.6;
+}
+
+/* ===== CATEGORY SECTION ===== */
+#mainRight {
+    text-align: center;
+    background-color: #f8fbff;
+    padding: 20px;
+    border-radius: 14px;
+}
+
+/* ===== CATEGORY GRID ===== */
+#categorySelections {
+    display: grid;
+    grid-template-columns: repeat(2, 240px);
+    gap: 25px;
     justify-content: center;
+    margin-top: 20px;
+}
+
+/* ===== CATEGORY CARD ===== */
+.category {
+    width: 240px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.category:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+.category:nth-child(1) {
+    background-color: #e3f2fd;
+}
+
+.category:nth-child(2) {
+    background-color: #e8f5e9;
+}
+
+.category:nth-child(3) {
+    background-color: #fff3e0;
+}
+
+.category:nth-child(4) {
+    background-color: #fce4ec;
+}
+
+.category a {
+    color: #355caa;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.category img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 12px;
+    border: 2px solid rgba(255,255,255,0.8);
+}
+
+/* ===== CATEGORY PAGE ===== */
+#catLeft {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
 }
 
 .notSelectedCategory {
-    height: 30px;
-    width: 150px;
-    border-radius: 8px;
-    margin: 20px;
-    text-align: center;
-    line-height: 30px;
-    background-color: #dd1d5e;
+    background-color: #4a90e2;
+    border-radius: 6px;
+    padding: 8px 12px;
 }
 
-.notSelectedCategory a{
-
+.notSelectedCategory a {
     color: white;
-    font-size: smaller;
-    text-decoration: none;
 }
 
 .selectedCategory {
-    height: 30px;
-    width: 150px;
-    border: 1px solid #dd1d5e;
-    border-radius: 8px;
-    margin: 20px;
-    text-align: center;
-    line-height: 30px;
-    color: #dd1d5e;
-    font-size: smaller;
+    border: 2px solid #ff9800;
+    background-color: #fff8ec;
+    color: #ff9800;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-weight: bold;
 }
 
-/* styles for the righthand section that shows all the books */
-
+/* ===== BOOK CARDS ===== */
 #catRight {
-    padding: 20px 20px 20px 30px;
-    box-shadow: inset 0 0 0 20px #fff9fc;
     display: flex;
     flex-wrap: wrap;
-    background-color: #fff9fc;
+    justify-content: center;
+    gap: 20px;
 }
 
 .book {
-    width: 350px;
-    margin: 30px;
-    display: flex;
-    background-color: white;
+    width: 280px;
+    background: linear-gradient(to bottom, #ffffff, #f9fbfd);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 12px;
+    border-top: 4px solid #7b68ee;
+}
+
+.book img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
 }
 
 .bookDetailBox {
-    margin: 20px 0 0 20px;
-    display: flex;
-    flex-direction: column;
-    font-size: 0.875em;
+    margin-top: 10px;
 }
 
 .bookTitle {
     font-weight: bold;
+    font-size: 17px;
 }
 
 .bookDetail {
+    font-size: 14px;
     margin-top: 4px;
-    font-size: 0.875em;
 }
 
 .bookPrice {
-    margin-top: 4px;
+    margin-top: 8px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+/* ===== BUTTONS ===== */
+.actionButton,
+.commandButton,
+.submitButton {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #ff9800;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
     font-weight: bold;
 }
 
-.actionButton {
-    height: 20px;
-    width: 70px;
-    border-radius: 8px;
-    margin-top: 4px;
-    line-height: 20px;
-    text-align: center;
-    background-color: #dd1d5e;
+.actionButton:hover,
+.commandButton:hover,
+.submitButton:hover {
+    background-color: #e68900;
+}
+
+/* ===== FORM ===== */
+input[type="text"],
+input[type="number"],
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 320px;
+    background-color: white;
+}
+
+button {
+    background-color: #27ae60;
     color: white;
-    font-size: 0.875em;
-    text-decoration: none;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #219150;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: 30px;
+    padding: 16px 20px;
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px 12px 0 0;
+}
+
+#footerLeft,
+#footerRight {
+    display: flex;
+    gap: 15px;
+}
+
+#footerRight img {
+    width: 24px;
+}
+
+/* ===== ERROR ===== */
+#notFoundMessage {
+    color: #d63031;
+    font-weight: bold;
 }
